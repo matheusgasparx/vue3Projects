@@ -14,9 +14,14 @@
           </div>
           <div class="price">
             <span class="quantity-area">
-              <button :disabled="product.quantity<=1" @click="product.quantity--">-</button>
+              <button 
+              :disabled="product.quantity <=1 " 
+              @click="product.quantity--">-</button>
               <span class="quantity">{{product.quantity}}</span>
-              <button @click="product.quantity++">+</button>
+
+              <button 
+              :disabled="product.quantity >= 10 "
+              @click="product.quantity++">+</button>
             </span>
             <span class="amount">US$ {{ (product.price * product.quantity).toFixed(2) }}</span>
           </div>
